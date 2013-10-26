@@ -1,0 +1,6 @@
+development:
+  adapter: postgresql
+  database: microblog_api_kata
+  pool: 5
+  timeout: 5000
+  host: localhost
