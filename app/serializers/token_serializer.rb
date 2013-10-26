@@ -1,3 +1,7 @@
 class TokenSerializer < ActiveModel::Serializer
-  attributes :value
+  attributes :token
+
+  def token
+    object.value
+  end
 end

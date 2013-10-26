@@ -3,6 +3,7 @@ class User < ActiveRecord::Base
   validates :password, :length => {:minimum => 8, :if => -> {@raw_password}, :message => "is too short"}
 
   has_many :tokens
+  has_many :posts
 
   def to_param
     username
