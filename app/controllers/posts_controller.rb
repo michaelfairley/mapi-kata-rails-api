@@ -2,6 +2,13 @@ class PostsController < ApplicationController
   before_filter :require_user, :only => [:create, :destroy]
   before_filter :match_user, :only => [:create]
 
+  def index
+    user = User.where(:username => params[:user_id]).first!
+    posts = user.posts.page(params[:after])
+    next_page = user_posts_path(user.username, :after => posts.last.id)
+    render :json => {:posts => posts, :next => next_page}
+  end
+
   def create
     post = current_user.posts.create(post_params)
     redirect_to post_path(post), :status => 303
