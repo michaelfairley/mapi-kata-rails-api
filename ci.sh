@@ -1,7 +1,7 @@
 set -x
 
 bundle
-rails s -p 12346 -d
+bundle exec rails s -p 12346 -d
 
 cd mapi-kata
 bundle
