@@ -6,4 +6,9 @@ class Post < ActiveRecord::Base
     scope = scope.where("id < ?", after)  if after
     scope
   end
+
+  def self.timeline(user)
+    author_ids = user.followees.pluck(:id)
+    where(:user_id => author_ids)
+  end
 end

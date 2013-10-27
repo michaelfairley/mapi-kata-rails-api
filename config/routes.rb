@@ -6,6 +6,10 @@ MapiKataRailsApiAms::Application.routes.draw do
         put :create
       end
     end
+
+    member do
+      get :timeline
+    end
   end
   resources :tokens, :only => [:create]
 

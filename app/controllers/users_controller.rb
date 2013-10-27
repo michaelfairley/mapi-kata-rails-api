@@ -14,6 +14,13 @@ class UsersController < ApplicationController
     render :json => @user
   end
 
+  def timeline
+    user = User.where(:username => params[:id]).first!
+    posts = Post.timeline(user).page(params[:after])
+    next_page = timeline_user_path(user.username, :after => posts.last.id)
+    render :json => {:posts => posts, :next => next_page}
+  end
+
 private
 
   def user_params
