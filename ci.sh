@@ -1,12 +1,11 @@
 set -x
-export
 
 cd mapi-kata
 bash setup.sh
 cd -
 
 bundle
-bundle exec rails s -p 12346 -d -e development
+RAILS_ENV=development RACK_ENV=development bundle exec rails s -p 12346 -d
 
 cd mapi-kata
 bash run.sh
