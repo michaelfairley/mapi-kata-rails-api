@@ -1,4 +1,5 @@
 set -x
+export
 
 cd mapi-kata
 bash setup.sh
