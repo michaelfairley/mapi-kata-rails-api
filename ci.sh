@@ -13,4 +13,9 @@ RETVAL=$?
 cd -
 
 kill `cat tmp/pids/server.pid`
+
+if [ $RETVAL -ne 0 ]
+    cat log/development.log
+fi
+
 exit $RETVAL
