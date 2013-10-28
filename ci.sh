@@ -1,5 +1,9 @@
 set -x
 
+cd mapi-kata
+bash setup.sh
+cd -
+
 bundle
 bundle exec rails s -p 12346 -d
 
