@@ -15,6 +15,7 @@ cd -
 kill `cat tmp/pids/server.pid`
 
 if [ $RETVAL -ne 0 ]
+then
     cat log/development.log
 fi
 
