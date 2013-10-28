@@ -6,7 +6,7 @@ bash setup.sh
 cd -
 
 bundle
-bundle exec rails s -p 12346 -d
+bundle exec rails s -p 12346 -d -e development
 
 cd mapi-kata
 bash run.sh
